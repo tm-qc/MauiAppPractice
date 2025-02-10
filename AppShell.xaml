@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!--.NET MAUI アプリケーションのメイン構造-->
+<!--XAMLの雰囲気からつかまないとしっくりこないかも。とりあえずまた後で-->
 <Shell
     x:Class="MauiAppPractice.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -7,6 +9,7 @@
     Shell.FlyoutBehavior="Flyout"
     Title="MauiAppPractice">
 
+    <!--多分ContentTemplateで初期表示のページを「MauiAppPractice\MauiProgram.cs」に指定してる-->
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"

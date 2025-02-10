@@ -1,4 +1,6 @@
 ﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--アプリが XAML (Extensible Application Markup Language) レイアウトで使用するアプリケーション リソースを定義-->
+<!--.NET MAUI の組み込みコントロールごとにアプリ全体の色と既定のスタイルを定義します-->
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MauiAppPractice"
@@ -6,6 +8,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <!--これがCSSみたいなものかな？-->
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>

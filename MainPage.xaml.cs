@@ -1,5 +1,6 @@
 ﻿namespace MauiAppPractice
 {
+    //MainPage.xamlの分離コード
     public partial class MainPage : ContentPage
     {
         int count = 0;
@@ -17,8 +18,9 @@
                 CounterBtn.Text = $"Clicked {count} time";
             else
                 CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            
+            //音声読み上げが必要な時に記載。ビューへの表示だけなら不要
+            //SemanticScreenReader.Announce(CounterBtn.Text);
         }
     }
 

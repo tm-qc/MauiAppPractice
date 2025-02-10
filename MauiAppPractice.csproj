@@ -1,5 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+	<!--プロジェクトがターゲットとするプラットフォームフレームワーク
+	アプリケーション タイトル、ID、バージョン、表示バージョン、サポートされているオペレーティング システムなどの項目を指定-->
 	<PropertyGroup>
 		<TargetFrameworks>net9.0-android;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net9.0-windows10.0.19041.0</TargetFrameworks>
@@ -41,6 +42,9 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<!-- 最初のウィンドウが表示される前
+	アプリの読み込み中に表示されるスプラッシュ画面の画像と色を指定できます
+	また、アプリで使用されるフォント、イメージ、アセットの既定の場所を設定することもできます。 -->
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -65,3 +69,11 @@
 	</ItemGroup>
 
 </Project>
+
+<!--MauiProgram.csとMauiAppPractice.csproの違いは？
+
+MauiProgram.cs
+アプリ全体の機能、ふるまいの設定。appやbuilderなどコードに設定して機能を書く
+
+MauiAppPractice.csproj
+アプリを作る土台、外側の設定（どの.NETバージョン？どのライブラリ、どのプラットフォーム？などを書く）-->

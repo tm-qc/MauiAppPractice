@@ -1,9 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--ユーザー インターフェイス定義-->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppPractice.MainPage">
 
+    <!--コントロールは、ScrollView で囲む-->
+    <!--コントロールってUIのこと？-->
+    <!--ScrollView を使用すると、ビューが大きすぎてデバイスに表示できない場合にスクロールバーを表示できます-->
+    <!--ってことだから、スクロールバーが表示したいときに使うだけかな？-->
+    
+    <!--XAMLの雰囲気理解からしないと。その時なんとなくわかってくるでしょ-->
     <ScrollView>
+        <!--VerticalStackLayout 要素を使用すると、コントロールを垂直方向に (積み重ねた状態に) 整列できます-->
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
