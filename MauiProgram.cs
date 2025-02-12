@@ -19,7 +19,7 @@ namespace MauiAppPractice
             builder
                 .UseMauiApp<App>()
                 //次のコードは、アプリ ビルダーを使用してフォントを登録する例を示しています
-                //アプリの実行を開始するときに、フォント フォルダーに追加されたすべてのフォントをアプリ ビルダー オブジェクトに登録する必要があります
+            　　//アプリの実行を開始するときに、フォント フォルダーに追加されたすべてのフォントをアプリ ビルダー オブジェクトに登録する必要があります
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
