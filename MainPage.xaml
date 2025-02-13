@@ -1,12 +1,114 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    <!--XAMLのデフォの名前空間定義-->
+    <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppPractice.MainPage"
              Title="MainPage">
-    <VerticalStackLayout>
+        
+    <!--Gridレイアウトで4マス配置-->
+    
+    <!--Gridレイアウトの定義
+    ・RowDefinitions="*,*" → 行（縦方向）を2つ作る
+    ・ColumnDefinitions="*,*" → 列（横方向）を2つ作る
+    ・それぞれの * は 均等にスペースを分割 する
+        
+    これで各要素で以下のように場所を指定できる
+    
+    左上
+    Grid.Row="0"
+    Grid.Column="0"
+        
+    右上
+    Grid.Row="0"
+    Grid.Column="1"
+        
+    左下
+    Grid.Row="1"
+    Grid.Column="0"
+        
+    左上
+    Grid.Row="1"
+    Grid.Column="1"-->
+    <Grid RowDefinitions="*,*" ColumnDefinitions="*,*">
+        <!-- 左上 -->
+        <!--BoxView：四角形を描く だけのシンプルなコンポーネント-->
+        <BoxView 
+            Grid.Row="0"
+            Grid.Column="0" 
+            Color="LightGreen"
+            />
+        <!--Label：テキスト表示-->
+        <!--
+        - VerticalTextAlignmen：テキストを縦方向を指定。Start → 上揃え、Center → 中央揃え（デフォルト）、End → 下揃えがある
+        - HorizontalTextAlignmen：テキストを横方向を指定。Start → 左揃え、Center → 中央揃え、End → 右揃え
+        - FontAttributes： フォントのスタイル(Bold,Italic)
+        - LineBreakMode：折り返し設定
+            NoWrap	折り返さない（はみ出す）
+            WordWrap	単語単位で折り返す
+            CharacterWrap	文字単位で折り返す（途中で改行OK）
+            HeadTruncation	先頭を切り捨てる（"…の終わり"）
+            TailTruncation	末尾を切り捨てる（"始まり…"）
+            MiddleTruncation	中央を切り捨てる（"始…終わり"）-->
+
+        <!--改行は\nは反映しないので、&#x0a;で書く-->
         <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Text="事業・現場&#x0a;情報&#x0a;ダウンロード" 
+            VerticalTextAlignment="Center" 
+            HorizontalTextAlignment="Center"
+            TextColor="Black" 
+            FontSize="18" 
+            LineBreakMode="CharacterWrap"
+            />
+
+        <!-- 右上 -->
+        <BoxView 
+            Grid.Row="0"
+            Grid.Column="1" 
+            Color="Green"
+            />
+        <Label 
+            Grid.Row="0" 
+            Grid.Column="1" 
+            Text="黒板設定" 
+            VerticalTextAlignment="Center" 
+            HorizontalTextAlignment="Center"
+            TextColor="Black" 
+            FontSize="18" 
+            />
+
+        <!-- 左下 -->
+        <BoxView 
+            Grid.Row="1" 
+            Grid.Column="0" 
+            Color="Orange"
+            />
+
+        <Label 
+            Grid.Row="1" 
+            Grid.Column="0" 
+            Text="写真撮影" 
+            VerticalTextAlignment="Center" 
+            HorizontalTextAlignment="Center"
+            TextColor="Black" 
+            FontSize="18" 
+            />
+
+        <!-- 右下 -->
+        <BoxView 
+            Grid.Row="1" 
+            Grid.Column="1" 
+            Color="Blue"
+            />
+        <Label 
+            Grid.Row="1" 
+            Grid.Column="1" 
+            Text="写真アップロード" 
+            VerticalTextAlignment="Center" 
+            HorizontalTextAlignment="Center"
+            TextColor="Black" 
+            FontSize="18" 
+            />
+    </Grid>
 </ContentPage>
