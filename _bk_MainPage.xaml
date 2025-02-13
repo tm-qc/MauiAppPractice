@@ -29,7 +29,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
         </Grid.ColumnDefinitions>
 
         <!-- 1行1列 -->
-        <BoxView Color="Red" Grid.Row="0" Grid.Column="0"/>
+        <BoxView Color="Pink" Grid.Row="0" Grid.Column="0"/>
 
         <!-- 1行2列 -->
         <BoxView Color="Blue" Grid.Row="0" Grid.Column="1"/>
