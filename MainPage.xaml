@@ -1,5 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--ユーザー インターフェイス定義-->
+    
+<!--XAMLに必須な名前空間の定義
+    
+XAML ページでは、ページの xmlns 属性を使用して名前空間を参照します
+
+xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+があるからXAMLのコントロールが使える
+
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+文字列、数値、プロパティなど、さまざまな .NET 組み込み型を含むアセンブリを参照します
+この名前空間にはエイリアス x が割り当てられています-->
+    
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppPractice.MainPage">
