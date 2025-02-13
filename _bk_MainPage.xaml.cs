@@ -1,11 +1,11 @@
 ﻿namespace MauiAppPractice
 {
     //MainPage.xamlの分離コード
-    public partial class MainPage : ContentPage
+    public partial class _bk_MainPage : ContentPage
     {
         //int count = 0;
 
-        public MainPage()
+        public _bk_MainPage()
         {
             InitializeComponent();
         }
