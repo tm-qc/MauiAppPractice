@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--.NET MAUI アプリケーションのメイン構造-->
-<!--XAMLの雰囲気からつかまないとしっくりこないかも。とりあえずまた後で-->
+<!--アプリの 画面遷移（ルーティング） や ページの構成 を定義するファイル-->
+<!--このファイルの変更の反映はホットリロードではしないこともあるみたいなので、その場合アプリ起動しなおしが必要-->
+
+<!--Shellの冒頭について
+
+この部分は自動で生成されるので、必要な場合は調整する
+
+x:Class：AppShell.xamlに紐づく分離ファイルのクラス名を指定。今回はAppShell.xaml.csになる
+    
+xmlns：.NET MAUI の標準 XAML 名前空間（.NET MAUI の UI 要素を使うために必要）
+       ページの既定の名前空間
+    
+xmlns:x：文字列、数値、プロパティなど、さまざまな .NET 組み込み型を含むアセンブリを参照
+         例えば、x:Name や x:Type などの XAML 独自の機能を使うときに必要
+         x:〇〇" の形でプロパティを指定する（例： x:Class）
+
+xmlns:local：MauiAppPractice" という C# の名前空間を XAML で使えるようにする
+    　例えば、"local:MainPage" で "MauiAppPractice.MainPage" を参照できる
+    
+Shell.FlyoutBehavior：FlyoutBehavior の設定を変更すると、ナビゲーションメニューの表示方法を変えられます。
+                     生成されるメニューのリンクは定義されてるルートになる
+    
+                      Flyout (デフォルト)	ハンバーガーメニューあり、左からスライド表示
+                      Disabled	メニューを無効化 (三本線も非表示)
+                      Locked	常にメニューを表示 (スマホでもPCみたいに左固定)
+    
+Title：アプリ全体のタイトル-->
+    
 <Shell
     x:Class="MauiAppPractice.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -9,10 +36,28 @@
     Shell.FlyoutBehavior="Flyout"
     Title="MauiAppPractice">
 
-    <!--多分ContentTemplateで初期表示のページを「MauiAppPractice\MauiProgram.cs」に指定してる-->
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <!--初期ページは最初に書いてるルートになる。記載順で決まる。-->
+    
+    <!--メニューページ-->
+    
+    <!--FlyoutItemタグ
+    ハンバーガーメニューのリンクの表示名を設定できる
+    これがなくても動く。ない場合は表示名はRouteの値になる
+    FlyoutIconはResources/Imagesフォルダを参照している-->
+    
+    <FlyoutItem Title="ホーム" FlyoutIcon="dotnet_bot.png">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+    </FlyoutItem>
+    
+    <!--黒板一覧、黒板編集画面へのルート追加-->
+    <FlyoutItem Title="黒板一覧、黒板編集画面" FlyoutIcon="dotnet_bot.png">
+        <ShellContent
+            Title="BlackboardList"
+            ContentTemplate="{DataTemplate local:BlackboardListPage}"
+            Route="BlackboardListPage" />
+    </FlyoutItem>
 
 </Shell>
