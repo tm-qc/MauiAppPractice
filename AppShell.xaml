@@ -42,10 +42,15 @@ Title：アプリ全体のタイトル-->
     
     <!--FlyoutItemタグ
     ハンバーガーメニューのリンクの表示名を設定できる
-    これがなくても動く。ない場合は表示名はRouteの値になる
+    これがなくても動く。ない場合は表示名はTitleの値になる
     FlyoutIconはResources/Imagesフォルダを参照している-->
     
     <FlyoutItem Title="ホーム" FlyoutIcon="dotnet_bot.png">
+        <!--ルート設定
+        Title：タイトルバーに表示されるページ名
+        ContentTemplate：表示するファイル名を設定
+        Route：ルート名。ナビゲーション時に使う-->
+        
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate local:MainPage}"
