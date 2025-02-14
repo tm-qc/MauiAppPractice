@@ -47,12 +47,11 @@ Title：アプリ全体のタイトル-->
     
     <FlyoutItem Title="ホーム" FlyoutIcon="dotnet_bot.png">
         <!--ルート設定
-        Title：タイトルバーに表示されるページ名
+        Title：タイトルバーに表示されるページ名→各ページの定義と重複して煩雑になるので、ここでは削除しました
         ContentTemplate：表示するファイル名を設定
         Route：ルート名。ナビゲーション時に使う-->
         
         <ShellContent
-            Title="Home"
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" />
     </FlyoutItem>
@@ -60,7 +59,6 @@ Title：アプリ全体のタイトル-->
     <!--黒板一覧、黒板編集画面へのルート追加-->
     <FlyoutItem Title="黒板一覧、黒板編集画面" FlyoutIcon="dotnet_bot.png">
         <ShellContent
-            Title="BlackboardList"
             ContentTemplate="{DataTemplate local:BlackboardListPage}"
             Route="BlackboardListPage" />
     </FlyoutItem>
