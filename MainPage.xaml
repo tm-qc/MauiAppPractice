@@ -63,19 +63,32 @@
             />
 
         <!-- 右上 -->
+        <!--タップでページ遷移できるように変更
+        
+        TapGestureRecognizerとButtonとでてきたが、Buttonが一般的で安定するっぽいが、どっち使う？
+        
+        Buttonが良い理由
+        
+        - 標準でクリック時のエフェクトがつくので、タップできることがユーザーに伝わりやすい
+        - Clickedイベントを持っているので、クリックメソッドを書くだけでOK
+        
+        TapGestureRecognizerは？
+        
+        - LabelにTapGestureRecognizerを設定しても遷移できるが、ボタンっぽく見えないため誤タップの可能性がある
+        - Label + TapGestureRecognizer ではフィードバックがなく、追加で Effects を設定しなければならない
+        - TapGestureRecognizer だと、Label.GestureRecognizers を設定しなきゃいけないので、コードが増える-->
         <BoxView 
             Grid.Row="0"
             Grid.Column="1" 
             Color="Green"
             />
-        <Label 
+        <Button 
             Grid.Row="0" 
             Grid.Column="1" 
             Text="黒板設定" 
-            VerticalTextAlignment="Center" 
-            HorizontalTextAlignment="Center"
             TextColor="Black" 
-            FontSize="18" 
+            FontSize="18"
+            Clicked="OnGoToBlackboardListPage"
             />
 
         <!-- 左下 -->
