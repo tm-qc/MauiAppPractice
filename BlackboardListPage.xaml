@@ -3,10 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppPractice.BlackboardListPage"
              Title="黒板一覧">
-    <VerticalStackLayout>
-        <Label 
-            Text="黒板一覧、黒板編集画面"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout Padding="20" Spacing="20">
+        <!-- 1. 新規追加ボタン -->
+        <Button Text="新規追加" />
+
+        <!-- 2. 編集ボタンとテキスト表示（1行3列） -->
+        <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto">
+            <Button Grid.Column="0" Text="編集"/>
+            <Label Grid.Column="1" Text="XXXXXXXXXX" VerticalOptions="Center" />
+            <Label Grid.Column="2" Text="999-99-9-9" VerticalOptions="Center" />
+        </Grid>
+
+        <!-- 3. 事業名テキストボックス -->
+        <Label Text="事業名：" />
+        <Entry x:Name="ProjectNameEntry" Placeholder="事業名を入力" />
+
+        <!-- 4. 現場名テキストボックス -->
+        <Label Text="現場名：" />
+        <Entry x:Name="SiteNameEntry" Placeholder="現場名を入力" />
+
+        <!-- 5. 林小班テキストボックス -->
+        <Label Text="林小班：" />
+        <Entry x:Name="ForestSectionEntry" Placeholder="林小班を入力" />
+
+        <!-- 6. 作業種：プルダウン -->
+        <Label Text="作業種：" />
+        <Picker x:Name="WorkTypePicker">
+            <Picker.Items>
+                <x:String>作業前</x:String>
+                <x:String>作業中</x:String>
+                <x:String>作業後</x:String>
+            </Picker.Items>
+        </Picker>
     </VerticalStackLayout>
 </ContentPage>
