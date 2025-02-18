@@ -3,8 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppPractice.BlackboardListPage"
              Title="黒板一覧">
-    <VerticalStackLayout Padding="20" Spacing="20">
-        <!--コントロールの大きさを決める場合の簡単で一般的な方法
+    <!--
+    VerticalStackLayout：大枠の括り
+    Padding="左, 上, 右, 下"-->
+    <VerticalStackLayout Padding="40,20,40,20" Spacing="40">
+        <!--コントロール()の大きさを決める場合の簡単で一般的な方法
         
         HorizontalOptionsは表示されるビュー＝レイアウトパネルに応じて自動で、
         以下のように大きさ、配置をしてくれる
@@ -13,36 +16,61 @@
         HorizontalOptions="Center"：真ん中+大きさは良い感じの大きさ(画面30%くらい)
         HorizontalOptions="End"：：右寄り+大きさは良い感じの大きさ(画面30%くらい)
         HorizontalOptions="Fill"：大きさが横幅100%-->
-        <!-- 1. 新規追加ボタン -->
-        <Button Text="新規追加" HorizontalOptions="Start" />
 
-        <!-- 2. 編集ボタンとテキスト表示（1行3列） -->
-        <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto">
-            <Button Grid.Column="0" Text="編集"/>
-            <Label Grid.Column="1" Text="XXXXXXXXXX" VerticalOptions="Center" />
-            <Label Grid.Column="2" Text="999-99-9-9" VerticalOptions="Center" />
-        </Grid>
+        <VerticalStackLayout Spacing="4">
+            <!-- 1. 新規追加ボタン -->
+            <Button Text="新規追加" HorizontalOptions="Start" />
+
+            <!-- 2. 編集ボタンとテキスト表示（1行3列） -->
+            <!--ColumnDefinitions:カラムの幅。
+            　Auto：内容に合わせた最小限の幅
+              *：残りの空間をすべて使う
+            
+            RowDefinitions：行の高さ
+            　Auto：内容に合わせた最小限の高さ
+            
+            VerticalOptions="Center"：テキストの「垂直」で真ん中表示-->
+            <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto">
+                <Border Grid.Column="0" Padding="10">
+                    <Button Text="編集"/>
+                </Border>
+                <Border Grid.Column="1" Padding="10">
+                    <Label Text="XXXXXXXXXX" VerticalOptions="Center"/>
+                </Border>
+                <Border Grid.Column="2" Padding="10">
+                    <Label Text="999-99-9-9" VerticalOptions="Center"/>
+                </Border>
+            </Grid>
+        </VerticalStackLayout>
 
         <!-- 3. 事業名テキストボックス -->
-        <Label Text="事業名：" />
-        <Entry x:Name="ProjectNameEntry" Placeholder="事業名を入力" />
+        <VerticalStackLayout Spacing="10">
+            <Label Text="事業名：" />
+            <Entry x:Name="ProjectNameEntry" Placeholder="事業名を入力" />
+        </VerticalStackLayout>
 
-        <!-- 4. 現場名テキストボックス -->
-        <Label Text="現場名：" />
-        <Entry x:Name="SiteNameEntry" Placeholder="現場名を入力" />
-
+            <!-- 4. 現場名テキストボックス -->
+        <VerticalStackLayout Spacing="10">
+            <Label Text="現場名：" />
+            <Entry x:Name="SiteNameEntry" Placeholder="現場名を入力" />
+        </VerticalStackLayout>
+        
         <!-- 5. 林小班テキストボックス -->
-        <Label Text="林小班：" />
-        <Entry x:Name="ForestSectionEntry" Placeholder="林小班を入力" />
+        <VerticalStackLayout Spacing="10">
+            <Label Text="林小班：" />
+            <Entry x:Name="ForestSectionEntry" Placeholder="林小班を入力" />
+        </VerticalStackLayout>
 
         <!-- 6. 作業種：プルダウン -->
-        <Label Text="作業種：" />
-        <Picker x:Name="WorkTypePicker">
-            <Picker.Items>
-                <x:String>作業前</x:String>
-                <x:String>作業中</x:String>
-                <x:String>作業後</x:String>
-            </Picker.Items>
-        </Picker>
+        <VerticalStackLayout Spacing="10">
+            <Label Text="作業種：" />
+            <Picker x:Name="WorkTypePicker">
+                <Picker.Items>
+                    <x:String>作業前</x:String>
+                    <x:String>作業中</x:String>
+                    <x:String>作業後</x:String>
+                </Picker.Items>
+            </Picker>
+        </VerticalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
