@@ -4,8 +4,17 @@
              x:Class="MauiAppPractice.BlackboardListPage"
              Title="黒板一覧">
     <VerticalStackLayout Padding="20" Spacing="20">
+        <!--コントロールの大きさを決める場合の簡単で一般的な方法
+        
+        HorizontalOptionsは表示されるビュー＝レイアウトパネルに応じて自動で、
+        以下のように大きさ、配置をしてくれる
+        
+        HorizontalOptions="Start"：左寄り+大きさは良い感じの大きさ(画面30%くらい)
+        HorizontalOptions="Center"：真ん中+大きさは良い感じの大きさ(画面30%くらい)
+        HorizontalOptions="End"：：右寄り+大きさは良い感じの大きさ(画面30%くらい)
+        HorizontalOptions="Fill"：大きさが横幅100%-->
         <!-- 1. 新規追加ボタン -->
-        <Button Text="新規追加" />
+        <Button Text="新規追加" HorizontalOptions="Start" />
 
         <!-- 2. 編集ボタンとテキスト表示（1行3列） -->
         <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto">
