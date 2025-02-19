@@ -23,13 +23,15 @@
 
             <!-- 2. 編集ボタンとテキスト表示（1行3列） -->
             <!--
-            ColumnDefinitions:カラムの幅とカラム数(今回は3列で指定)
+            ColumnDefinitions:カラムの幅とカラム数(今回は設定値3個なので、3列で表示になる)
             　Auto：内容に合わせた最小限の幅
               *：残りの空間をすべて使う
             
             　※数値でも幅設定書ける
             
-            RowDefinitions：行の高さ(今回は1行で指定)
+            RowDefinitions：行の高さと行数を指定するが、
+            　　　　　　　　ColumnDefinitionsと違ってGrid.Row="0"やGrid.Row="1"などの指定と設定値の個数両方がないと、行数が増えない(今回は1行で指定)
+            　　　　　　　　※わかりにくいがこういう仕様になってる
             　Auto：内容に合わせた最小限の高さ
             
             　※数値でも高さ設書ける
@@ -46,7 +48,6 @@
             　もちろん幅も<ColumnDefinition Width="1*" />でできる
             　行と列の既定のサイズは 1* 
               　
-            
             VerticalOptions="Center"：テキストの「垂直」で真ん中表示
             
             Gridの位置を指定する場合
@@ -60,14 +61,23 @@
             　Grid.RowSpan="3"：3行分
             
             -->
-            <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto">
-                <Border Grid.Column="0" Padding="10">
+            <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto">
+                <Border Grid.Column="0" Padding="10" Grid.Row="0">
                     <Button Text="編集"/>
                 </Border>
-                <Border Grid.Column="1" Padding="10">
+                <Border Grid.Column="1" Padding="10" Grid.Row="0">
                     <Label Text="XXXXXXXXXX" VerticalOptions="Center"/>
                 </Border>
-                <Border Grid.Column="2" Padding="10">
+                <Border Grid.Column="2" Padding="10" Grid.Row="0">
+                    <Label Text="999-99-9-9" VerticalOptions="Center"/>
+                </Border>
+                <Border Grid.Column="0" Padding="10" Grid.Row="1">
+                    <Button Text="編集"/>
+                </Border>
+                <Border Grid.Column="1" Padding="10" Grid.Row="1">
+                    <Label Text="XXXXXXXXXX" VerticalOptions="Center"/>
+                </Border>
+                <Border Grid.Column="2" Padding="10" Grid.Row="1">
                     <Label Text="999-99-9-9" VerticalOptions="Center"/>
                 </Border>
             </Grid>
