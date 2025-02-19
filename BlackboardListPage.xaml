@@ -61,7 +61,7 @@
             　Grid.RowSpan="3"：3行分
             
             -->
-            <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto">
+            <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto">
                 <Border Grid.Column="0" Padding="10" Grid.Row="0">
                     <Button Text="編集"/>
                 </Border>
@@ -71,15 +71,13 @@
                 <Border Grid.Column="2" Padding="10" Grid.Row="0">
                     <Label Text="999-99-9-9" VerticalOptions="Center"/>
                 </Border>
-            </Grid>
-            <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto">
-                <Border Grid.Column="0" Padding="10" Grid.Row="0">
+                <Border Grid.Column="0" Padding="10" Grid.Row="1">
                     <Button Text="編集"/>
                 </Border>
-                <Border Grid.Column="1" Padding="10" Grid.Row="0">
+                <Border Grid.Column="1" Padding="10" Grid.Row="1">
                     <Label Text="XXXXXXXXXX" VerticalOptions="Center"/>
                 </Border>
-                <Border Grid.Column="2" Padding="10" Grid.Row="0">
+                <Border Grid.Column="2" Padding="10" Grid.Row="1">
                     <Label Text="999-99-9-9" VerticalOptions="Center"/>
                 </Border>
             </Grid>
