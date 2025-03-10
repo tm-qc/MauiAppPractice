@@ -11,6 +11,18 @@ namespace MauiAppPractice.MarkupExtensions
     //nameof(SizeKey) を使うのは型安全性や修正漏れのときにエラーが出る状態を確保し、リファクタリング時のミスを防ぐため
     //SizeKey の名前は自由に決めてOK
     [ContentProperty(nameof(SizeKey))]
+
+    //このアノテーション[AcceptEmptyServiceProvider]はなに？
+    //IServiceProviderの機能を使ってるか、使ってないか明示しないと警告が出るので必要
+    //IServiceProviderはつかわなくてもProvideValueの引数に必要なので、削除はできない。
+
+    //[RequireService]：IServiceProviderを使うときはこれにしないといけない
+    //[AcceptEmptyServiceProvider]：IServiceProviderを使ってないときはこれにする
+
+    //今はつかってないので、[AcceptEmptyServiceProvider]にする
+    //今後つかうときに[AcceptEmptyServiceProvider]に変える
+
+    [AcceptEmptyServiceProvider]
     public class GlobalFontSizeExtension : IMarkupExtension
     {
         public string SizeKey { get; set; } = "Default";

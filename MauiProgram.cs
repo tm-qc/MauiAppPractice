@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using MauiAppPractice.Helpers;
+using MauiAppPractice.Repository;
+using Microsoft.Extensions.Logging;
 
 //各ネイティブ プラットフォームには、アプリケーションを作成して初期化するさまざまな開始点があります
 //このコードは、プロジェクトの Platforms フォルダー内にあります
@@ -26,8 +28,15 @@ namespace MauiAppPractice
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            // SQLite データベース利用のため追加
+            // データベース ファイルはworkphoto.db
+            // このファイルはアプリによってデバイスのローカル ストレージに保存されます
+            string dbPath = FileAccessHelper.GetLocalFilePath("workphoto.db");
+            builder.Services.AddSingleton<BlackboardSettingRepository>(s => ActivatorUtilities.CreateInstance<BlackboardSettingRepository>(s, dbPath));
+
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
